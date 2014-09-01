@@ -11,7 +11,7 @@
         $query_result=mysql_query($showtablequery);
         while($showtablerow = mysql_fetch_array($query_result))
         {
-        echo "<li>".$row[1]."</li>"; 
+        echo "<li>".$showtablerow[1]."</li>"; 
         } 
         ?>
 		</ul>
