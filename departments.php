@@ -46,7 +46,7 @@ select the department and click on Go button.
         $query_result=mysql_query($showtablequery);
         while($showtablerow = mysql_fetch_array($query_result))
         {
-        echo "<option value='".$row["Department_Page"]."'>" . $row["Department_Name"] . "</option>";
+        echo "<option value='".$showtablerow["Department_Page"]."'>" . $showtablerow["Department_Name"] . "</option>";
         } 
         ?>      
     </select>
