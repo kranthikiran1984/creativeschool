@@ -90,11 +90,11 @@ function SetAllDepartmentsInDropDown()
 	}
 	else
 	{
-		mysql_select_db($con, $database) or die("Unable to select database");
+		mysql_select_db($database) or die("Unable to select database");
 
 		$query="Select Department_Id, Department_Name,Department_Page  FROM department";
 
-		$result = mysql_query($con, $query);
+		$result = mysql_query($query);
 
 		while($row = mysql_fetch_array($result)) {
 		 
@@ -120,11 +120,11 @@ function SetAllDepartmentsInList()
 	}
 	else
 	{
-		mysql_select_db($con, $database) or die("Unable to select database");
+		mysql_select_db($database) or die("Unable to select database");
 
 		$query="Select Department_Id, Department_Name FROM department";
 
-		$result = mysql_query($con, $query);
+		$result = mysql_query($query);
 
 		while($row = mysql_fetch_array($result)) {
 		 
@@ -149,11 +149,11 @@ function SetAllDepartmentsInList()
 	}
 	else
 	{
-		mysql_select_db($con, $database) or die("Unable to select database");
+		mysql_select_db($database) or die("Unable to select database");
 
 		$query="Select course_Id, course_Name FROM course c, reldepartment_course rc WHERE rc.course_Id=c.course_id AND rc.department_Id="+$dept_Id;
 
-		mysql_query($con, $query);
+		mysql_query($query);
 
 		mysql_close($con);
 	}
