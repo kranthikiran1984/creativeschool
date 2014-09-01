@@ -126,7 +126,7 @@ function SetAllDepartmentsInList()
 
 		$result = mysql_query($con, $query);
 
-		while($row = mysql_fetch_assoc($result)) {
+		while($row = mysql_fetch_array($result)) {
 		 
 		   echo "<li>".$row['department_name']."</li>"; 
 		}
