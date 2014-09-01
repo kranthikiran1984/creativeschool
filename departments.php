@@ -98,7 +98,7 @@ function SetAllDepartmentsInDropDown()
 
 		while($row = mysql_fetch_assoc($result)) {
 		 
-		   echo '<option value="'.$row["department_page"].'">' . $row["department_name"] . '</option>';
+		   echo "<option value='".$row['department_page']."'>" . $row['department_name'] . "</option>";
 		}
 
 		mysql_close($con);
@@ -128,7 +128,7 @@ function SetAllDepartmentsInList()
 
 		while($row = mysql_fetch_assoc($result)) {
 		 
-		   echo '<li>'.$row["department_name"].'</li>'; 
+		   echo "<li>".$row['department_name']."</li>"; 
 		}
 
 		mysql_close($con);
