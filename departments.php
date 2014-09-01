@@ -85,14 +85,14 @@ function SetAllDepartmentsInDropDown()
 	$con= mysql_connect($server,$user,$password);
 
 	// Check connection
-	if (mysqli_connect_errno()) {
+	if (mysql_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysql_connect_error();
 	}
 	else
 	{
-		@mysql_select_db($con, $database) or die("Unable to select database");
+		mysql_select_db($con, $database) or die("Unable to select database");
 
-		$query="Select Department_Id, Department_Name FROM course";
+		$query="Select Department_Id, Department_Name FROM department";
 
 		$result = mysql_query($con, $query);
 
@@ -115,14 +115,14 @@ function SetAllDepartmentsInList()
 	$con= mysql_connect($server,$user,$password);
 
 	// Check connection
-	if (mysqli_connect_errno()) {
+	if (mysql_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysql_connect_error();
 	}
 	else
 	{
-		@mysql_select_db($con, $database) or die("Unable to select database");
+		mysql_select_db($con, $database) or die("Unable to select database");
 
-		$query="Select Department_Id, Department_Name FROM course";
+		$query="Select Department_Id, Department_Name FROM department";
 
 		$result = mysql_query($con, $query);
 
@@ -144,12 +144,12 @@ function SetAllDepartmentsInList()
 	$con= mysql_connect($server,$user,$password);
 
 	// Check connection
-	if (mysqli_connect_errno()) {
+	if (mysql_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysql_connect_error();
 	}
 	else
 	{
-		@mysql_select_db($con, $database) or die("Unable to select database");
+		mysql_select_db($con, $database) or die("Unable to select database");
 
 		$query="Select course_Id, course_Name FROM course c, reldepartment_course rc WHERE rc.course_Id=c.course_id AND rc.department_Id="+$dept_Id;
 
