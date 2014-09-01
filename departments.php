@@ -26,88 +26,7 @@ The Academic Programmes of the ECIS Khammam began in 2003 with the B. Tech. prog
 
 <ul>
     <?php 
-        SetAllDepartmentsInList();
-        ?>
-</ul><br/>
-select the department and click on Go button.
-    <select name="depList" id="depList">
-        
-        <?php 
-
-            SetAllDepartmentsInDropDown();
-    ?>
-    </select>
-
-<input type="button" value="Go" onclick="MoveToDept()" />
-
-</div>
-</div>
-<div align="center">
- 
-
-COPYRIGHT © 2014 - ALL RIGHTS RESERVED
-</div>
-<?php
-
-function SetAllCourses()
-{
-	$user="b95a2f9e2a388a";
-	$password="99d6c567";
-	$database="creativeschoolDB";
-	$server = "us-cdbr-azure-east-a.cloudapp.net";
-
-	$con= mysql_connect($server,$user,$password);
-
-	// Check connection
-	if (mysqli_connect_errno()) {
-		echo "Failed to connect to MySQL: " . mysql_connect_error();
-	}
-	else
-	{
-		@mysql_select_db($con, $database) or die("Unable to select database");
-
-		$query="Select Course_Id, Course_Name FROM course";
-
-		mysql_query($con, $query);
-
-		mysql_close($con);
-	}
-}
-
-
-function SetAllDepartmentsInDropDown()
-{
-	$user="b95a2f9e2a388a";
-	$password="99d6c567";
-	$database="creativeschoolDB";
-	$server = "us-cdbr-azure-east-a.cloudapp.net";
-
-	$con= mysql_connect($server,$user,$password);
-
-	// Check connection
-	if (mysql_connect_errno()) {
-		echo "Failed to connect to MySQL: " . mysql_connect_error();
-	}
-	else
-	{
-		mysql_select_db($database) or die("Unable to select database");
-
-		$query="Select Department_Id, Department_Name,Department_Page  FROM department";
-
-		$result = mysql_query($query);
-
-		while($row = mysql_fetch_array($result)) {
-		 
-		   echo "<option value='".$row["Department_Page"]."'>" . $row["Department_Name"] . "</option>";
-		}
-
-		mysql_close($con);
-	}
-}
-
-function SetAllDepartmentsInList()
-{
-	$user="b95a2f9e2a388a";
+        $user="b95a2f9e2a388a";
 	$password="99d6c567";
 	$database="creativeschoolDB";
 	$server = "us-cdbr-azure-east-a.cloudapp.net";
@@ -133,32 +52,22 @@ function SetAllDepartmentsInList()
 
 		mysql_close($con);
 	}
-}
-    function SetCoursesofferedByDepartment($dpt_Id)
-{
-	$user="b95a2f9e2a388a";
-	$password="99d6c567";
-	$database="creativeschoolDB";
-	$server = "us-cdbr-azure-east-a.cloudapp.net";
+        ?>
+</ul><br/>
+select the department and click on Go button.
+    <select name="depList" id="depList">
+        
+    </select>
 
-	$con= mysql_connect($server,$user,$password);
+<input type="button" value="Go" onclick="MoveToDept()" />
 
-	// Check connection
-	if (mysql_connect_errno()) {
-		echo "Failed to connect to MySQL: " . mysql_connect_error();
-	}
-	else
-	{
-		mysql_select_db($database) or die("Unable to select database");
+</div>
+</div>
+<div align="center">
+ 
 
-		$query="Select course_Id, course_Name FROM course c, reldepartment_course rc WHERE rc.course_Id=c.course_id AND rc.department_Id="+$dept_Id;
+COPYRIGHT © 2014 - ALL RIGHTS RESERVED
+</div>
 
-		mysql_query($query);
-
-		mysql_close($con);
-	}
-}
-
-?>
 </body>
 </html>
