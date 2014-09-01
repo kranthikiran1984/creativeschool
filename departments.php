@@ -47,9 +47,11 @@ The Academic Programmes of the ECIS Khammam began in 2003 with the B. Tech. prog
 
 		$result = mysql_query($query);
 
+		echo "hai";
 		while($row = mysql_fetch_array($result)) {
 		 
-		   echo "<li>".$row["Department_Name"]."</li>"; 
+		   echo "hello";
+		   //echo "<li>".$row["Department_Name"]."</li>"; 
 		}
 
 		mysql_close($con);
