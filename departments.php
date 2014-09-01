@@ -26,38 +26,17 @@
 The Academic Programmes of the ECIS Khammam began in 2003 with the B. Tech. programme in three departments – Computer Science and Engineering, Electronics and Communication Engineering<BR>
 
 <ul>
-    <?
-	 
-        $user="b95a2f9e2a388a";
-	$password="99d6c567";
-	$database="creativeschoolDB";
-	$server = "us-cdbr-azure-east-a.cloudapp.net";
-
-	$con= mysql_connect($server,$user,$password);
-
-	// Check connection
-	if (mysql_connect_errno()) {
-		echo "Failed to connect to MySQL: " . mysql_connect_error();
-	}
-	else
-	{
-		mysql_select_db($database) or die("Unable to select database");
-
-		$query="Select Department_Id, Department_Name FROM department";
-
-		$result = mysql_query($query);
-
-		echo "hai";
-		while($row = mysql_fetch_array($result)) {
-		 
-		   echo "hello";
-		   //echo "<li>".$row["Department_Name"]."</li>"; 
-		}
-
-		mysql_close($con);
-	}
+  <?
+        $connect=mysql_connect("us-cdbr-azure-east-a.cloudapp.net","b95a2f9e2a388a","99d6c567") or die("Unable to Connect");
+        mysql_select_db("creativeschoolDB") or die("Could not open the db");
+        $showtablequery="Select Department_Id, Department_Name FROM department";
+        $query_result=mysql_query($showtablequery);
+        while($showtablerow = mysql_fetch_array($query_result))
+        {
+        echo "<li>".$showtablerow["Department_Name"]."</li>"; 
+        } 
         ?>
-</ul><br/>
+		</ul><br/>
 select the department and click on Go button.
     <select name="depList" id="depList">
         
