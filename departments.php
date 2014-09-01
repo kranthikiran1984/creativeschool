@@ -39,7 +39,16 @@ The Academic Programmes of the ECIS Khammam began in 2003 with the B. Tech. prog
 		</ul><br/>
 select the department and click on Go button.
     <select name="depList" id="depList">
-        
+		<?
+        $connect=mysql_connect("us-cdbr-azure-east-a.cloudapp.net","b95a2f9e2a388a","99d6c567") or die("Unable to Connect");
+        mysql_select_db("creativeschoolDB") or die("Could not open the db");
+        $showtablequery="Select Department_Id, Department_Name FROM department";
+        $query_result=mysql_query($showtablequery);
+        while($showtablerow = mysql_fetch_array($query_result))
+        {
+        echo "<option value='".$row["Department_Page"]."'>" . $row["Department_Name"] . "</option>";
+        } 
+        ?>      
     </select>
 
 <input type="button" value="Go" onclick="MoveToDept()" />
