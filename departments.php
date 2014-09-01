@@ -92,7 +92,7 @@ function SetAllDepartmentsInDropDown()
 	{
 		mysql_select_db($con, $database) or die("Unable to select database");
 
-		$query="Select Department_Id, Department_Name FROM department";
+		$query="Select Department_Id, Department_Name,Department_Page  FROM department";
 
 		$result = mysql_query($con, $query);
 
