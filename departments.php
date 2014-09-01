@@ -96,7 +96,7 @@ function SetAllDepartmentsInDropDown()
 
 		$result = mysql_query($con, $query);
 
-		while($row = mysql_fetch_assoc($result)) {
+		while($row = mysql_fetch_array($result)) {
 		 
 		   echo "<option value='".$row['department_page']."'>" . $row['department_name'] . "</option>";
 		}
