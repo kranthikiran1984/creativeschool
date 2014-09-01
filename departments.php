@@ -34,7 +34,7 @@ select the department and click on Go button.
         
         <?php 
 
-            SetAllDepartments();
+            SetAllDepartmentsInDropDown();
     ?>
     </select>
 
