@@ -1,5 +1,6 @@
 <html>
 <head>
+<title>Departments</title>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <script src="departments.js"></script>
 
@@ -25,7 +26,8 @@
 The Academic Programmes of the ECIS Khammam began in 2003 with the B. Tech. programme in three departments – Computer Science and Engineering, Electronics and Communication Engineering<BR>
 
 <ul>
-    <?php 
+    <?
+	 
         $user="b95a2f9e2a388a";
 	$password="99d6c567";
 	$database="creativeschoolDB";
